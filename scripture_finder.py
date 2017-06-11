@@ -99,40 +99,40 @@ class ScriptureFinder(object):
                            'Ezr.': 'Ezra', '1Co': '1 Corinthians', 'Eph.': 'Ephesians', '1 Th': '1 Thessalonians',
                            '2 Sa': '2 Samuel', 'Gal': 'Galatians', '1 Chr': '1 Chronicles', '1 Kings': '1 Kings',
                            '2 Co': '2 Corinthians', 'Da.': 'Daniel', '1Ki.': '1 Kings', '1 Pet': '1 Peter',
-                           '2Ti.': '2 Timothy', '1 Tim': '1 Timothy', 'Apocalipse': 'Revelation'}
+                           '2Ti.': '2 Timothy', '1 Tim': '1 Timothy'}
         self.bk_aliases = [
-            'Genesis', 'Gen.', 'Gen', 'Ge.', 'Ge', 'Exodus', 'Ex.', 'Ex', 'Leviticus', 'Le.', 'Le', 'Numbers', 'Num.',
-            'Num', 'Nu.', 'Nu', 'Deuteronomy', 'Deut.', 'Deut', 'De.', 'De', 'Joshua', 'Jos.', 'Jos', 'Judges',
-             'Judg.', 'Judg', 'Jud.', 'Jud', 'Jg.', 'Jg', 'Ruth', 'Ru.', 'Ru', '1 Samuel', '1 Sam.', '1 Sam', '1 Sa.',
-            '1 Sa', '1Samuel','1Sam.', '1Sam', '1Sa.',  '1Sa', '2 Samuel', '2 Sam.', '2 Sam', '2 Sa.', '2 Sa',
-            '2Samuel', '2Sam.', '2Sam', '2Sa.', '2Sa', '1 Kings', '1 King', '1 Ki.', '1 Ki', '1Kings', '1King', '1Ki.',
-            '1Ki', '2 Kings', '2 King', '2 Ki.', '2 Ki', '2Kings', '2King', '2Ki.', '2Ki', '1 Chronicles', '1 Chr.',
-            '1 Chr', '1 Ch.', '1 Ch', '1Chronicles', '1Chr.', '1Chr', '1Ch.', '1Ch', '2 Chronicles', '2 Chr.', '2 Chr',
-            '2 Ch.', '2 Ch', '2Chronicles', '2Chr.', '2Chr', '2Ch.', '2Ch', 'Ezra', 'Ezr.', 'Ezr', 'Ez.', 'Ez',
-            'Nehemiah', 'Neh.', 'Neh', 'Ne.', 'Ne', 'Esther', 'Est.', 'Est', 'Es.', 'Es', 'Job', 'Psalms', 'Psalm',
-            'Ps.', 'Ps', 'Proverbs', 'Proverb', 'Pr.', 'Pr', 'Ecclesiastes', 'Ecc.', 'Ecc', 'Ec.', 'Ec',
-            'Song of Solomon', 'Song', 'Canticles', 'Ca.', 'Ca', 'Isaiah', 'Isa.', 'Isa', 'Jeremiah', 'Jer.',
-            'Jer', 'Lamentations', 'La.', 'La', 'Ezekiel', 'Eze.', 'Eze', 'Daniel', 'Dan.', 'Dan', 'Da.', 'Da',
-            'Hosea', 'Hos.', 'Hos', 'Ho.', 'Ho', 'Joel', 'Joe.', 'Joe', 'Amos', 'Am.', 'Am', 'Obadiah', 'Oba.', 'Oba',
-            'Ob.', 'Ob', 'Jonah', 'Jon.', 'Jon', 'Micah', 'Mic.', 'Mic', 'Nahum', 'Nah.', 'Nah', 'Na.', 'Na',
-            'Habakkuk', 'Hab.', 'Hab', 'Zephaniah', 'Zep.', 'Zep', 'Haggai', 'Hag.', 'Hag', 'Zechariah', 'Zec.',
-            'Zec', 'Malachi', 'Mal.', 'Mal', 'Matthew', 'Matt.', 'Matt', 'Mat.', 'Mat', 'Mt.', 'Mt', 'Mark', 'Mar.',
-            'Mar', 'Mr.', 'Mr', 'Luke', 'Luk.', 'Luk', 'Lu.', 'Lu', 'John', 'Joh.', 'Joh', 'Acts', 'Act', 'Ac.', 'Ac',
-            'Romans', 'Rom.', 'Rom', 'Ro.', 'Ro', '1 Corinthians', '1 Cor.', '1 Cor', '1 Co.', '1 Co', '1Corinthians',
-            '1Cor.', '1Cor', '1Co.', '1Co', '2 Corinthians', '2 Cor.', '2 Cor', '2 Co.', '2 Co', '2Corinthians',
-            '2Cor.', '2Cor', '2Co.', '2Co', 'Galatians', 'Gal.', 'Gal', 'Ga.', 'Ga', 'Ephesians', 'Eph.', 'Eph',
-            'Philippians', 'Php.', 'Php', 'Colossians', 'Col.', 'Col', '1 Thessalonians', '1 Thes.', '1 Thes', '1 The.',
-            '1 The', '1 Th.', '1 Th', '1Thessalonians', '1Thes.', '1Thes', '1The.', '1The', '1Th.', '1Th',
-            '2 Thessalonians', '2 Thes.', '2 Thes', '2 The.', '2 The', '2 Th.', '2 Th', '2Thessalonians', '2Thes.',
-            '2Thes', '2The.', '2The', '2Th.', '2Th', '1 Timothy', '1 Tim.', '1 Tim', '1 Ti.', '1 Ti', '1Timothy',
-            '1Tim.', '1Tim', '1Ti.', '1Ti', '2 Timothy', '2 Tim.', '2 Tim', '2 Ti.', '2 Ti', '2Timothy', '2Tim.',
-            '2Tim', '2Ti.', '2Ti', 'Titus', 'Tit.', 'Tit', 'Philemon', 'Phm.', 'Phm', 'Hebrews', 'Heb.', 'Heb', 'He.',
-            'He', 'James', 'Jam.', 'Jam', 'Jas.', 'Jas', '1 Peter', '1 Pet.', '1 Pet', '1 Pe.', '1 Pe', '1Peter',
-            '1Pet.', '1Pet', '1Pe.', '1Pe', '2 Peter', '2 Pet.', '2 Pet', '2 Pe.', '2 Pe', '2Peter', '2Pet.', '2Pet',
-            '2Pe.', '2Pe', '1 John', '1 Joh.', '1 Joh', '1 Jo.', '1 Jo', '1John', '1Joh.', '1Joh', '1Jo.', '1Jo',
-            '2 John', '2 Joh.', '2 Joh', '2 Jo.', '2 Jo', '2John', '2Joh.', '2Joh', '2Jo.', '2Jo', '3 John', '3 Joh.',
-            '3 Joh', '3 Jo.', '3 Jo', '3John', '3Joh.', '3Joh', '3Jo.', '3Jo', 'Jude', 'Revelation', 'Rev.', 'Rev',
-            'Re.', 'Re', 'Apocalipse', 'Apo.', 'Apo', 'Ap.', 'Ap'
+            'Genesis', 'Gen', 'Ge', 'Gen.', 'Ge.', 'Exodus', 'Ex', 'Ex.', 'Leviticus', 'Le', 'Le.', 'Numbers', 'Num',
+            'Nu', 'Num.', 'Nu.', 'Deuteronomy', 'Deut', 'De', 'Deut.', 'De.', 'Joshua', 'Jos', 'Jos.', 'Judges',
+            'Judg', 'Jud', 'Jg', 'Judg.', 'Jud.', 'Jg.', 'Ruth', 'Ru', 'Ru.', '1 Samuel', '1 Sam', '1 Sa', '1 Sam.',
+            '1 Sa.', '1Samuel', '1Sam', '1Sa', '1Sam.', '1Sa.', '2 Samuel', '2 Sam', '2 Sa', '2 Sam.', '2 Sa.',
+            '2Samuel', '2Sam', '2Sa', '2Sam.', '2Sa.', '1 Kings', '1 King', '1 Ki', '1 Ki.', '1Kings', '1King', '1Ki',
+            '1Ki.', '2 Kings', '2 King', '2 Ki', '2 Ki.', '2Kings', '2King', '2Ki', '2Ki.', '1 Chronicles', '1 Chr',
+            '1 Ch', '1 Chr.', '1 Ch.', '1Chronicles', '1Chr', '1Ch', '1Chr.', '1Ch.', '2 Chronicles', '2 Chr', '2 Ch',
+            '2 Chr.', '2 Ch.', '2Chronicles', '2Chr', '2Ch', '2Chr.', '2Ch.', 'Ezra', 'Ezr', 'Ez', 'Ezr.', 'Ez.',
+            'Nehemiah', 'Neh', 'Ne', 'Neh.', 'Ne.', 'Esther', 'Est', 'Es', 'Est.', 'Es.', 'Job', 'Psalms', 'Psalm',
+            'Ps', 'Ps.', 'Proverbs', 'Proverb', 'Pr', 'Pr.', 'Ecclesiastes', 'Ecc', 'Ec', 'Ecc.', 'Ec.',
+            'Song of Solomon', 'Song', 'Song', 'Canticles', 'Ca', 'Ca.', 'Isaiah', 'Isa', 'Isa.', 'Jeremiah', 'Jer',
+            'Jer.', 'Lamentations', 'La', 'La.', 'Ezekiel', 'Eze', 'Eze.', 'Daniel', 'Dan', 'Da', 'Dan.', 'Da.',
+            'Hosea', 'Hos', 'Ho', 'Hos.', 'Ho.', 'Joel', 'Joe', 'Joe.', 'Amos', 'Am', 'Am.', 'Obadiah', 'Oba', 'Ob',
+            'Oba.', 'Ob.', 'Jonah', 'Jon', 'Jon.', 'Micah', 'Mic', 'Mic.', 'Nahum', 'Nah', 'Na', 'Nah.', 'Na.',
+            'Habakkuk', 'Hab', 'Hab.', 'Zephaniah', 'Zep', 'Zep.', 'Haggai', 'Hag', 'Hag.', 'Zechariah', 'Zec',
+            'Zec.', 'Malachi', 'Mal', 'Mal.', 'Matthew', 'Matt', 'Mat', 'Mt', 'Matt.', 'Mat.', 'Mt.', 'Mark', 'Mar',
+            'Mr', 'Mar.', 'Mr.', 'Luke', 'Luk', 'Lu', 'Luk.', 'Lu.', 'John', 'Joh', 'Joh.', 'Acts', 'Act', 'Ac', 'Ac.',
+            'Romans', 'Rom', 'Ro', 'Rom.', 'Ro.', '1 Corinthians', '1 Cor', '1 Co', '1 Cor.', '1 Co.', '1Corinthians',
+            '1Cor', '1Co', '1Cor.', '1Co.', '2 Corinthians', '2 Cor', '2 Co', '2 Cor.', '2 Co.', '2Corinthians',
+            '2Cor', '2Co', '2Cor.', '2Co.', 'Galatians', 'Gal', 'Ga', 'Gal.', 'Ga.', 'Ephesians', 'Eph', 'Eph.',
+            'Philippians', 'Php', 'Php.', 'Colossians', 'Col', 'Col.', '1 Thessalonians', '1 Thes', '1 The', '1 Th',
+            '1 Thes.', '1 The.', '1 Th.', '1Thessalonians', '1Thes', '1The', '1Th', '1Thes.', '1The.', '1Th.',
+            '2 Thessalonians', '2 Thes', '2 The', '2 Th', '2 Thes.', '2 The.', '2 Th.', '2Thessalonians', '2Thes',
+            '2The', '2Th', '2Thes.', '2The.', '2Th.', '1 Timothy', '1 Tim', '1 Ti', '1 Tim.', '1 Ti.', '1Timothy',
+            '1Tim', '1Ti', '1Tim.', '1Ti.', '2 Timothy', '2 Tim', '2 Ti', '2 Tim.', '2 Ti.', '2Timothy', '2Tim', '2Ti',
+            '2Tim.', '2Ti.', 'Titus', 'Tit', 'Tit.', 'Philemon', 'Phm', 'Phm.', 'Hebrews', 'Heb', 'He', 'Heb.', 'He.',
+            'James', 'Jam', 'Jas', 'Jam.', 'Jas.', '1 Peter', '1 Pet', '1 Pe', '1 Pet.', '1 Pe.', '1Peter', '1Pet',
+            '1Pe', '1Pet.', '1Pe.', '2 Peter', '2 Pet', '2 Pe', '2 Pet.', '2 Pe.', '2Peter', '2Pet', '2Pe', '2Pet.',
+            '2Pe.', '1 John', '1 Joh', '1 Jo', '1 Joh.', '1 Jo.', '1John', '1Joh', '1Jo', '1Joh.', '1Jo.', '2 John',
+            '2 Joh', '2 Jo', '2 Joh.', '2 Jo.', '2John', '2Joh', '2Jo', '2Joh.', '2Jo.', '3 John', '3 Joh', '3 Jo',
+            '3 Joh.', '3 Jo.', '3John', '3Joh', '3Jo', '3Joh.', '3Jo.', 'Jude', 'Revelation', 'Rev', 'Re', 'Rev.',
+            'Re.', 'Apo', 'Ap', 'Apo.', 'Ap.'
         ]
         self.bk_index = ('Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth',
                          '1 Samuel', '2 Samuel', '1 Kings', '2 Kings', '1 Chronicles', '2 Chronicles', 'Ezra',
@@ -150,7 +150,6 @@ class ScriptureFinder(object):
         self.count_retrieved = 0
         self.count_verses = 0
         self.scripture_list = []
-        self.failed = []
 
     # Main extraction. Creates a list of scriptures.
     def run(self, source):
@@ -165,64 +164,51 @@ class ScriptureFinder(object):
         # Variables declared for use here, so they are reset with each run.
         self.count_retrieved = 0
         self.scripture_list = []
-        self.failed = []
 
         # Search for each alias of a book. (Ex: Genesis, Gen, Ge, Gen., Ge.)
         for alias in self.bk_aliases:
             curr_bk = self.bk_abbrevs[alias]
-            # print('Searching for: ' + alias)
 
             while line.find(alias) != -1:
-                retrieved = ''
-                try:
-                    index = line.find(alias)
-                    chap_ver_beg = index + len(alias)
-                    chap_ver_end = chap_ver_beg
+                index = line.find(alias)
+                chap_ver_beg = index + len(alias)
+                chap_ver_end = chap_ver_beg
 
-                    # Starting with the first index number after the len(alias), look at each character to determine
-                    # the end of the of the expression. Below, we see the first char after the alias is 1, and the last
-                    # that would pass the while statement is the 8.
-                    # "sent, Jesus Christ. (Obadiah17, 18) Yes, the Bible teaches that..."
-                    while line[chap_ver_end].isdigit() or line[chap_ver_end] == ' ' or line[chap_ver_end] == ',' \
-                            or line[chap_ver_end] == ':' or line[chap_ver_end] == ';' or line[chap_ver_end] == '-':
-                        chap_ver_end += 1
-                    retrieved = alias + line[chap_ver_beg:chap_ver_end]
+                # Starting with the first index number after the len(alias), look at each character to determine the end
+                # of the of the expression. Here we see the first char after the alias is 1, and the last would pass
+                # the while statement is the 8. "sent, Jesus Christ. (Obadiah17, 18) Yes, the Bible teaches that..."
+                while line[chap_ver_end].isdigit() or line[chap_ver_end] == ' ' or line[chap_ver_end] == ',' \
+                        or line[chap_ver_end] == ':' or line[chap_ver_end] == ';' or line[chap_ver_end] == '-':
+                    chap_ver_end += 1
+                retrieved = alias + line[chap_ver_beg:chap_ver_end]
 
-                    # Remove the found scripture from the line so it won't be found multiple times.
-                    line = line[:index] + line[chap_ver_beg:]
+                # Remove the found scripture from the line so it won't be found multiple times.
+                line = line[:index] + line[chap_ver_beg:]
 
-                    # Ignore cases where the book is mentioned without a chapter or verse.
-                    while retrieved[-1].isdigit() is False:
-                        retrieved = retrieved[:-1]
-                        if len(retrieved) < len(alias):
-                            break
+                # Ignore cases where the book is mentioned without a chapter or verse.
+                while retrieved[-1].isdigit() is False:
+                    retrieved = retrieved[:-1]
                     if len(retrieved) < len(alias):
-                        continue
+                        break
+                if len(retrieved) < len(alias):
+                    continue
 
-                    # If the book retrieved is a single-chapter book, change the format. ('Jude 3' becomes '1:3')
-                    if curr_bk in self.one_chap_books and ':' not in retrieved:
-                        retrieved = '1:' + retrieved[len(alias) + 1:].strip()
-                    # Otherwise, just trim out the expression so it only contains the verses. ('Rom 5:8' becomes '5:8')
-                    else:
-                        retrieved = retrieved[len(alias):]
+                # If the book retrieved is a single-chapter book, change the format. ('Jude 3' becomes '1:3')
+                if curr_bk in self.one_chap_books and ':' not in retrieved:
+                    retrieved = '1:' + retrieved[len(alias) + 1:].strip()
+                # Otherwise, just trim out the expression so it only contains the verses. ('Rom 5:8' becomes '5:8')
+                else:
+                    retrieved = retrieved[len(alias):]
 
-                    # Remove whitespace.
-                    retrieved = retrieved.replace(' ', '')
+                # Remove whitespace.
+                retrieved = retrieved.replace(' ', '')
 
-                    # Parse the scriptures into individual book/chapter/verse entries. Create the final scripture list.
-                    parsed = self.split_verse(curr_bk, retrieved)
-                    for scripture in parsed:
-                        self.scripture_list.append(scripture)
-
-                except ValueError:
-                    self.failed.append(['ValueError', alias, retrieved,
-                                        'Last success was ' + self.scripture_list[-1]])
-                except IndexError:
-                    self.failed.append(['IndexError', alias, retrieved,
-                                        'Last success was ' + self.scripture_list[-1]])
+                # Parse the scriptures into individual book/chapter/verse entries. Create the final scripture list.
+                parsed = self.split_verse(curr_bk, retrieved)
+                for scripture in parsed:
+                    self.scripture_list.append(scripture)
 
         self.count_retrieved = len(self.scripture_list)
-        print(str(self.failed) + '\n')
 
         return self.scripture_list
 
